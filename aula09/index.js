@@ -6,8 +6,15 @@ app.get('/cumprimentar/:nome', (req,res)=>{
     res.send("Olá "+nome)
     })
 
-app.get('/calcular',(req,res)=>{
+app.get('/calcular/:numero1/:numero2?',(req,res)=>{
+    let {numero1,numero2}=req.params
+    
+    if(numero2){
+        let resultado= parseInt(numero1) +parseInt(numero2)
+        res.send(resultado)}else{
 
+       res.send(numero1)
+    }
 })
 
 
